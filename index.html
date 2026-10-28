@@ -1,426 +1,198 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Rakibul Islam Akash – CSE Student, Software Developer & AI Enthusiast based in Dhaka, Bangladesh." />
-  <meta name="keywords" content="Rakibul Islam Akash, CSE, Software Developer, AI, Portfolio, AIUB, Bangladesh" />
-  <meta name="author" content="Rakibul Islam Akash" />
-  <meta property="og:title" content="Rakibul Islam Akash | Portfolio" />
-  <meta property="og:description" content="CSE Student | Software Developer | AI Enthusiast" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://aquamarine-concha-57fd70.netlify.app/" />
-  <meta name="theme-color" content="#0a0f1e" />
-  <title>Rakibul Islam Akash | Portfolio</title>
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <!-- External CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Rakibul Islam Akash is a software engineer building secure, role-based full-stack and mobile products. Currently at IBCS-Primax in Dhaka.">
+  <meta name="author" content="Rakibul Islam Akash">
+  <meta name="theme-color" content="#11110f" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f5f4ef" media="(prefers-color-scheme: light)">
+  <link rel="canonical" href="https://axisakash.github.io/My_Portfolio/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Rakibul Islam Akash">
+  <meta property="og:title" content="Rakibul Islam Akash | Software Engineer">
+  <meta property="og:description" content="Software engineer building secure, role-based full-stack and mobile products. Currently at IBCS-Primax.">
+  <meta property="og:url" content="https://axisakash.github.io/My_Portfolio/">
+  <meta property="og:image" content="https://axisakash.github.io/My_Portfolio/assets/og-image.svg">
+  <meta property="og:image:alt" content="Rakibul Islam Akash - software engineer portfolio">
+  <meta property="og:image:type" content="image/svg+xml">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rakibul Islam Akash | Software Engineer">
+  <meta name="twitter:description" content="Secure, role-based full-stack and mobile products by Rakibul Islam Akash.">
+  <meta name="twitter:image" content="https://axisakash.github.io/My_Portfolio/assets/og-image.svg">
+  <title>Rakibul Islam Akash | Software Engineer</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <script>
+    (() => { const saved = localStorage.getItem('portfolio-theme'); const theme = saved || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme; })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Rakibul Islam Akash",
+    "jobTitle": "Software Engineer Intern",
+    "email": "mailto:rakibulislamakash40@gmail.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Dhaka", "addressCountry": "BD" },
+    "worksFor": { "@type": "Organization", "name": "IBCS-Primax Software (Bangladesh) Ltd." },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "American International University-Bangladesh" },
+    "sameAs": ["https://github.com/AxisAkash", "https://linkedin.com/in/rakibul-islam-akash-2a0054347"]
+  }
+  </script>
 </head>
 <body>
-  <!-- Custom cursor -->
-  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
-  <div class="cursor-circle" id="cursorCircle" aria-hidden="true"></div>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-  <header class="navbar" id="navbar" role="banner">
-    <nav class="nav-container" aria-label="Primary navigation">
-      <a href="#home" class="nav-logo" aria-label="Rakibul Islam Akash – Home">
-        <span class="logo-bracket">&lt;</span>Akash<span class="logo-bracket">/&gt;</span>
-      </a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </button>
-      <ul class="nav-menu" id="navMenu" role="list">
-        <li><a href="#home"     class="nav-link" aria-label="Home section">Home</a></li>
-        <li><a href="#about"    class="nav-link" aria-label="About section">About</a></li>
-        <li><a href="#skills"   class="nav-link" aria-label="Skills section">Skills</a></li>
-        <li><a href="#projects" class="nav-link" aria-label="Projects section">Projects</a></li>
-        <li><a href="#research" class="nav-link" aria-label="Research section">Research</a></li>
-        <li><a href="#contact"  class="nav-link nav-link--cta" aria-label="Contact section">Contact</a></li>
-      </ul>
-    </nav>
+  <svg class="visually-hidden" aria-hidden="true" focusable="false">
+    <symbol id="icon-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"></path></symbol>
+    <symbol id="icon-arrow-right" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"></path></symbol>
+    <symbol id="icon-arrow-left" viewBox="0 0 24 24"><path d="M20 12H5m6-6-6 6 6 6"></path></symbol>
+    <symbol id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path></symbol>
+    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M20.5 14.8A8.5 8.5 0 0 1 9.2 3.5 8.5 8.5 0 1 0 20.5 14.8Z"></path></symbol>
+    <symbol id="icon-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="11" height="11" rx="1"></rect><path d="M16 8V5H5v11h3"></path></symbol>
+    <symbol id="icon-x" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"></path></symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"></rect><path d="m4 7 8 6 8-6"></path></symbol>
+  </svg>
+
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a class="wordmark" href="#home" aria-label="Rakibul Islam Akash home"><span>[</span>RA<span>]</span></a>
+      <nav aria-label="Primary navigation">
+        <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Open navigation menu"><span class="nav-toggle__lines"></span></button>
+        <div class="nav-menu" id="navMenu">
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#work">Work</a>
+          <a class="nav-link" href="#experience">Experience</a>
+          <a class="nav-link" href="#contact">Contact</a>
+        </div>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme"><svg class="icon" aria-hidden="true"><use href="#icon-sun"></use></svg></button>
+    </div>
   </header>
 
-  <main id="main-content">
+  <aside class="section-index" aria-label="Section index">
+    <a href="#home" data-index-link="home">00 <span class="visually-hidden">Home</span></a>
+    <a href="#about" data-index-link="about">01 <span class="visually-hidden">About</span></a>
+    <a href="#work" data-index-link="work">02 <span class="visually-hidden">Selected work</span></a>
+    <a href="#experience" data-index-link="experience">03 <span class="visually-hidden">Experience</span></a>
+    <a href="#contact" data-index-link="contact">04 <span class="visually-hidden">Contact</span></a>
+  </aside>
 
-    <!-- HERO -->
-    <section id="home" class="hero" aria-label="Hero introduction">
-      <div class="hero__bg-grid" aria-hidden="true"></div>
-      <div class="hero__orb hero__orb--1" aria-hidden="true"></div>
-      <div class="hero__orb hero__orb--2" aria-hidden="true"></div>
-      <div class="hero__content">
-        <p class="hero__greeting anim-fade-up" style="--anim-delay:0.05s" aria-label="Introduction">
-          <span class="hero__greeting-dot" aria-hidden="true"></span>
-          Hello, I'm
-        </p>
-        <h1 class="hero__name anim-fade-up" style="--anim-delay:0.15s">Rakibul Islam Akash</h1>
-        <p class="hero__typewriter anim-fade-up" style="--anim-delay:0.25s" aria-label="CSE Student | Software Developer | AI Enthusiast">
-          <span class="hero__role-prefix" aria-hidden="true">—&nbsp;</span><span id="typewriter" aria-live="polite"></span><span class="cursor" aria-hidden="true">|</span>
-        </p>
-        <p class="hero__description anim-fade-up" style="--anim-delay:0.35s">
-          Building intelligent systems and software solutions with modern technologies. Currently studying at AIUB, Dhaka.
-        </p>
-        <div class="hero__actions anim-fade-up" style="--anim-delay:0.45s">
-          <a href="#projects" class="btn btn--primary btn--animated"><i class="fa-solid fa-briefcase" aria-hidden="true"></i> View My Work</a>
-          <a href="#contact"  class="btn btn--ghost  btn--animated"><i class="fa-regular fa-envelope" aria-hidden="true"></i> Contact Me</a>
-        </div>
-        <div class="hero__social anim-fade-up" style="--anim-delay:0.55s" aria-label="Social links">
-          <a href="https://github.com/AxisAkash" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
-          <a href="https://linkedin.com/in/rakibul-islam-akash-2a0054347" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
-          <a href="mailto:rakibulislamakash40@gmail.com" aria-label="Send email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
-        </div>
-      </div>
-      <div class="hero__scroll-indicator" aria-hidden="true">
-        <span>Scroll</span>
-        <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="about section" aria-labelledby="about-heading">
-      <div class="container">
-        <div class="section-header scroll-reveal" data-reveal="fade-up">
-          <span class="section-label">About Me</span>
-          <h2 class="section-title" id="about-heading">Who I Am</h2>
-        </div>
-        <div class="about__grid">
-          <div class="about__text scroll-reveal" data-reveal="fade-right">
-            <p class="about__lead">I'm a passionate Computer Science &amp; Engineering student at AIUB, deeply fascinated by the intersection of artificial intelligence, software development, and human-centred design.</p>
-            <p>Currently pursuing my B.Sc. in CSE, I enjoy building practical applications that solve real-world problems — from rental management systems to AI-powered tools. I thrive on learning, experimenting, and pushing the boundaries of what's possible with code.</p>
-            <p>Outside the keyboard, I explore research on AI's influence on human behaviour and adolescent psychology, believing that technology and empathy together create the most meaningful impact.</p>
-            <div class="about__info-grid">
-              <div class="about__info-item scroll-reveal" data-reveal="fade-up" style="--reveal-delay:0.05s">
-                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-                <div><span class="info-label">Location</span><span class="info-value">Bashundhara R/A, Dhaka, Bangladesh</span></div>
-              </div>
-              <div class="about__info-item scroll-reveal" data-reveal="fade-up" style="--reveal-delay:0.1s">
-                <i class="fa-solid fa-phone" aria-hidden="true"></i>
-                <div><span class="info-label">Phone</span><span class="info-value"><a href="tel:+8801973096450">01973 096 450</a></span></div>
-              </div>
-              <div class="about__info-item scroll-reveal" data-reveal="fade-up" style="--reveal-delay:0.15s">
-                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-                <div><span class="info-label">Email</span><span class="info-value"><a href="mailto:rakibulislamakash40@gmail.com">rakibulislamakash40@gmail.com</a></span></div>
-              </div>
-              <div class="about__info-item scroll-reveal" data-reveal="fade-up" style="--reveal-delay:0.2s">
-                <i class="fa-solid fa-globe" aria-hidden="true"></i>
-                <div><span class="info-label">Portfolio</span><span class="info-value"><a href="https://aquamarine-concha-57fd70.netlify.app/" target="_blank" rel="noopener noreferrer">Live Portfolio</a></span></div>
-              </div>
-            </div>
+  <main class="site-main" id="main-content">
+    <section class="hero container" id="home" aria-labelledby="hero-title">
+      <div class="hero__layout">
+        <div>
+          <p class="hero__kicker">Software engineer / Dhaka</p>
+          <h1 class="hero__title" id="hero-title">
+            <span class="hero__reveal"><span>Rakibul</span></span>
+            <span class="hero__reveal"><span><em>Islam</em></span></span>
+            <span class="hero__reveal"><span>Akash.</span></span>
+          </h1>
+          <p class="hero__copy">Building secure, role-based full-stack and mobile products. Currently at IBCS-Primax.</p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#work" data-magnetic>View selected work <svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></a>
+            <a class="button" href="assets/resume-placeholder.txt" download>Download résumé</a>
           </div>
-          <div class="about__education scroll-reveal" data-reveal="fade-left">
-            <div class="edu-card">
-              <div class="edu-card__icon" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></div>
-              <div class="edu-card__body">
-                <span class="edu-card__year">2023 – Present</span>
-                <h3 class="edu-card__degree">B.Sc. in Computer Science &amp; Engineering</h3>
-                <p class="edu-card__institution">American International University – Bangladesh (AIUB)</p>
-                <div class="edu-card__gpa">
-                  <span class="gpa-label">GPA</span>
-                  <span class="gpa-value">3.38</span>
-                  <div class="gpa-bar" role="progressbar" aria-valuenow="3.38" aria-valuemin="0" aria-valuemax="4.0" aria-label="GPA 3.38 out of 4.0">
-                    <div class="gpa-fill" style="--gpa-pct: 84.5%"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="about__languages">
-              <h3 class="about__languages-title">Languages</h3>
-              <ul class="lang-list" role="list">
-                <li class="lang-item"><span class="lang-name">Bengali</span><span class="lang-level lang-level--native">Native</span></li>
-                <li class="lang-item"><span class="lang-name">English</span><span class="lang-level lang-level--fluent">Fluent</span></li>
-                <li class="lang-item"><span class="lang-name">Hindi</span><span class="lang-level lang-level--basic">Basic</span></li>
-              </ul>
-            </div>
+          <div class="hero__socials" aria-label="Social links">
+            <a href="https://github.com/AxisAkash" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            <a href="https://linkedin.com/in/rakibul-islam-akash-2a0054347" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+            <a href="mailto:rakibulislamakash40@gmail.com">Email <span aria-hidden="true">↗</span></a>
           </div>
         </div>
+        <div class="hero__meta" aria-label="Current status">
+          <div class="hero__meta-block"><span class="hero__meta-label">Now</span><span class="hero__meta-value hero__meta-value--live">Intern @ IBCS-Primax</span></div>
+          <div class="hero__meta-block"><span class="hero__meta-label">Dhaka local time</span><time class="hero__meta-value" id="dhakaTime" datetime=""></time></div>
+          <div class="hero__meta-block"><span class="hero__meta-label">Based in</span><span class="hero__meta-value">Bashundhara R/A, Dhaka</span></div>
+        </div>
       </div>
     </section>
 
-    <!-- SKILLS -->
-    <section id="skills" class="skills section section--alt" aria-labelledby="skills-heading">
+    <section class="section section--lined" id="about" aria-labelledby="about-title">
       <div class="container">
-        <div class="section-header scroll-reveal" data-reveal="fade-up">
-          <span class="section-label">Skills</span>
-          <h2 class="section-title" id="skills-heading">Technical Arsenal</h2>
-        </div>
-        <div class="skills__grid">
-          <article class="skill-card scroll-reveal" data-reveal="fade-up" style="--reveal-delay:0.05s" aria-label="Programming Languages">
-            <div class="skill-card__header">
-              <div class="skill-card__icon" aria-hidden="true"><i class="fa-solid fa-terminal"></i></div>
-              <h3 class="skill-card__title">Programming Languages</h3>
-            </div>
-            <ul class="skill-tags" role="list">
-              <li class="skill-tag"><i class="fa-solid fa-code" aria-hidden="true"></i> C++</li>
-              <li class="skill-tag"><i class="fa-brands fa-java" aria-hidden="true"></i> Java</li>
-              <li class="skill-tag"><i class="fa-solid fa-hashtag" aria-hidden="true"></i> C#</li>
-              <li class="skill-tag"><i class="fa-solid fa-database" aria-hidden="true"></i> SQL</li>
-              <li class="skill-tag"><i class="fa-brands fa-python" aria-hidden="true"></i> Python</li>
-            </ul>
-          </article>
-          <article class="skill-card scroll-reveal" data-reveal="fade-up" style="--reveal-delay:0.1s" aria-label="Web Development">
-            <div class="skill-card__header">
-              <div class="skill-card__icon" aria-hidden="true"><i class="fa-solid fa-globe"></i></div>
-              <h3 class="skill-card__title">Web Development</h3>
-            </div>
-            <ul class="skill-tags" role="list">
-              <li class="skill-tag"><i class="fa-brands fa-html5" aria-hidden="true"></i> HTML5</li>
-              <li class="skill-tag"><i class="fa-brands fa-css3-alt" aria-hidden="true"></i> CSS3</li>
-              <li class="skill-tag"><i class="fa-brands fa-js" aria-hidden="true"></i> JavaScript</li>
-            </ul>
-          </article>
-          <article class="skill-card scroll-reveal" data-reveal="fade-up" style="--reveal-delay:0.15s" aria-label="Frameworks and Tools">
-            <div class="skill-card__header">
-              <div class="skill-card__icon" aria-hidden="true"><i class="fa-solid fa-layer-group"></i></div>
-              <h3 class="skill-card__title">Frameworks &amp; Tools</h3>
-            </div>
-            <ul class="skill-tags" role="list">
-              <li class="skill-tag"><i class="fa-solid fa-cube" aria-hidden="true"></i> .NET Framework</li>
-              <li class="skill-tag"><i class="fa-solid fa-brain" aria-hidden="true"></i> TensorFlow</li>
-            </ul>
-          </article>
-          <article class="skill-card skill-card--learning scroll-reveal" data-reveal="fade-up" style="--reveal-delay:0.2s" aria-label="DevOps – Currently Learning">
-            <div class="skill-card__header">
-              <div class="skill-card__icon" aria-hidden="true"><i class="fa-solid fa-infinity"></i></div>
-              <h3 class="skill-card__title">DevOps <span class="learning-badge">Learning</span></h3>
-            </div>
-            <ul class="skill-tags" role="list">
-              <li class="skill-tag"><i class="fa-solid fa-gears" aria-hidden="true"></i> Jenkins</li>
-              <li class="skill-tag"><i class="fa-brands fa-docker" aria-hidden="true"></i> Docker</li>
-              <li class="skill-tag"><i class="fa-solid fa-dharmachakra" aria-hidden="true"></i> Kubernetes</li>
-              <li class="skill-tag"><i class="fa-brands fa-gitlab" aria-hidden="true"></i> GitLab CI</li>
-              <li class="skill-tag"><i class="fa-solid fa-circle-notch" aria-hidden="true"></i> CircleCI</li>
-              <li class="skill-tag"><i class="fa-solid fa-code-branch" aria-hidden="true"></i> Travis CI</li>
-            </ul>
-          </article>
-          <article class="skill-card scroll-reveal" data-reveal="fade-up" style="--reveal-delay:0.25s" aria-label="Design Tools">
-            <div class="skill-card__header">
-              <div class="skill-card__icon" aria-hidden="true"><i class="fa-solid fa-palette"></i></div>
-              <h3 class="skill-card__title">Design Tools</h3>
-            </div>
-            <ul class="skill-tags" role="list">
-              <li class="skill-tag"><i class="fa-brands fa-figma" aria-hidden="true"></i> Figma</li>
-              <li class="skill-tag"><i class="fa-brands fa-microsoft" aria-hidden="true"></i> Microsoft 365</li>
-              <li class="skill-tag"><i class="fa-solid fa-film" aria-hidden="true"></i> CapCut</li>
-            </ul>
-          </article>
+        <header class="section-heading" data-reveal>
+          <span class="section-heading__index">01 — About</span>
+          <div><h2 class="section-heading__title" id="about-title">An engineer with a bias for useful systems.</h2><p class="section-heading__intro">I work across backend, mobile, and data layers, with a focus on the access rules and workflows that make a product dependable.</p></div>
+        </header>
+        <div class="about-grid" data-reveal>
+          <article class="about-panel about-panel--statement"><span class="about-panel__label">01 / Point of view</span><p class="about-panel__lead">I like the part where a vague requirement becomes a system people can actually use.</p></article>
+          <article class="about-panel about-panel--fact"><span class="about-panel__label">02 / Coordinates</span><dl class="fact-list"><div class="fact-list__item"><dt class="fact-list__label">Location</dt><dd class="fact-list__value">Bashundhara R/A, Dhaka, Bangladesh</dd></div><div class="fact-list__item"><dt class="fact-list__label">Email</dt><dd class="fact-list__value"><a href="mailto:rakibulislamakash40@gmail.com">rakibulislamakash40@gmail.com</a></dd></div><div class="fact-list__item"><dt class="fact-list__label">Phone</dt><dd class="fact-list__value"><a href="tel:+8801973096450">+880 1973-096450</a></dd></div></dl></article>
+          <article class="about-panel about-panel--education"><span class="about-panel__label">03 / Education</span><div class="education-list"><div class="education-list__item"><time class="education-list__date">2023 — Present</time><strong class="education-list__degree">B.Sc. CSE</strong><span class="education-list__school">American International University-Bangladesh (AIUB) · GPA 3.38/4.00</span></div><div class="education-list__item"><time class="education-list__date">2019 — 2022</time><strong class="education-list__degree">HSC, Science</strong><span class="education-list__school">Govt. Yeasin College · GPA 5.00/5.00</span></div><div class="education-list__item"><time class="education-list__date">2017 — 2019</time><strong class="education-list__degree">SSC, Science</strong><span class="education-list__school">Faridpur Zilla School · GPA 4.89/5.00</span></div></div></article>
+          <article class="about-panel about-panel--languages"><span class="about-panel__label">04 / Languages</span><ul class="languages-list"><li>Bengali <span>native</span></li><li>English <span>fluent</span></li></ul></article>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="projects section" aria-labelledby="projects-heading">
+    <section class="section section--lined" id="capabilities" aria-labelledby="capabilities-title">
       <div class="container">
-        <div class="section-header scroll-reveal" data-reveal="fade-up">
-          <span class="section-label">Projects</span>
-          <h2 class="section-title" id="projects-heading">What I've Built</h2>
-        </div>
-        <div class="projects__grid">
-          <article class="project-card scroll-reveal" data-reveal="fade-up" style="--reveal-delay:0.05s" aria-label="Rental Management System project">
-            <div class="project-card__number" aria-hidden="true">01</div>
-            <div class="project-card__body">
-              <div class="project-card__icon" aria-hidden="true"><i class="fa-solid fa-building"></i></div>
-              <h3 class="project-card__title">Rental Management System</h3>
-              <p class="project-card__desc">A comprehensive desktop application for tenant and property management, featuring secure user authentication and automated billing workflows.</p>
-              <ul class="project-card__tech" role="list" aria-label="Technologies used">
-                <li>C#</li><li>.NET Framework</li><li>SQL</li>
-              </ul>
-            </div>
-            <div class="project-card__footer">
-              <a href="https://github.com/AxisAkash" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Rental Management System on GitHub">
-                <i class="fa-brands fa-github" aria-hidden="true"></i> View on GitHub
-              </a>
-              <i class="fa-solid fa-arrow-up-right-from-square project-card__arrow" aria-hidden="true"></i>
-            </div>
-          </article>
-          <article class="project-card project-card--featured scroll-reveal" data-reveal="fade-up" style="--reveal-delay:0.12s" aria-label="AI Calculator project">
-            <div class="project-card__number" aria-hidden="true">02</div>
-            <div class="project-card__body">
-              <div class="project-card__icon" aria-hidden="true"><i class="fa-solid fa-calculator"></i></div>
-              <h3 class="project-card__title">AI Calculator</h3>
-              <p class="project-card__desc">An AI-powered calculator that interprets natural language mathematical queries using TensorFlow and NLP techniques, bridging the gap between human expression and computation.</p>
-              <ul class="project-card__tech" role="list" aria-label="Technologies used">
-                <li>Python</li><li>TensorFlow</li><li>NLP</li>
-              </ul>
-            </div>
-            <div class="project-card__footer">
-              <a href="https://github.com/AxisAkash" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View AI Calculator on GitHub">
-                <i class="fa-brands fa-github" aria-hidden="true"></i> View on GitHub
-              </a>
-              <i class="fa-solid fa-arrow-up-right-from-square project-card__arrow" aria-hidden="true"></i>
-            </div>
-          </article>
-          <article class="project-card scroll-reveal" data-reveal="fade-up" style="--reveal-delay:0.2s" aria-label="Digital Currency Converter project">
-            <div class="project-card__number" aria-hidden="true">03</div>
-            <div class="project-card__body">
-              <div class="project-card__icon" aria-hidden="true"><i class="fa-solid fa-coins"></i></div>
-              <h3 class="project-card__title">Digital Currency Converter</h3>
-              <p class="project-card__desc">A responsive web application providing real-time currency conversion via live API integration, with a clean and intuitive user interface.</p>
-              <ul class="project-card__tech" role="list" aria-label="Technologies used">
-                <li>JavaScript</li><li>HTML</li><li>CSS</li><li>REST API</li>
-              </ul>
-            </div>
-            <div class="project-card__footer">
-              <a href="https://github.com/AxisAkash" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Digital Currency Converter on GitHub">
-                <i class="fa-brands fa-github" aria-hidden="true"></i> View on GitHub
-              </a>
-              <i class="fa-solid fa-arrow-up-right-from-square project-card__arrow" aria-hidden="true"></i>
-            </div>
-          </article>
-        </div>
-        <div class="projects__cta scroll-reveal" data-reveal="fade-up">
-          <a href="https://github.com/AxisAkash" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--animated">
-            <i class="fa-brands fa-github" aria-hidden="true"></i> See All Projects on GitHub
-          </a>
+        <header class="section-heading" data-reveal><span class="section-heading__index">01.5 — Capabilities</span><div><h2 class="section-heading__title" id="capabilities-title">A capability map, not a logo wall.</h2><p class="section-heading__intro">The tools are useful because they let me build a specific kind of product: one with clear roles, persistent data, and a reliable path through the interface.</p></div></header>
+        <div class="skills-map" data-reveal>
+          <article class="skill-group"><h3>Backend &amp; data</h3><p>Express.js<br>PHP (MVC)<br>MySQL · SQL Server<br>Supabase / PostgreSQL<br>Authentication · RBAC<br>Session management<br>Prepared statements</p></article>
+          <article class="skill-group"><h3>Mobile</h3><p>React<br>React Native<br>Expo<br>TypeScript<br>Role-based mobile workflows</p></article>
+          <article class="skill-group"><h3>AI</h3><p>TensorFlow<br>NLP basics<br>Prompt engineering<br>AI-assisted development,<br>debugging, and refactoring</p></article>
+          <article class="skill-group"><h3>Languages</h3><p>C++ · Java · C#<br>SQL · PHP · JavaScript<br>Python · TypeScript</p></article>
+          <article class="skill-group"><h3>Tooling</h3><p>Git<br>GitHub<br>GitLab</p></article>
         </div>
       </div>
     </section>
 
-    <!-- RESEARCH -->
-    <section id="research" class="research section section--alt" aria-labelledby="research-heading">
+    <section class="section section--lined" id="work" aria-labelledby="work-title">
       <div class="container">
-        <div class="section-header scroll-reveal" data-reveal="fade-up">
-          <span class="section-label">Research</span>
-          <h2 class="section-title" id="research-heading">Academic Work</h2>
-        </div>
-        <div class="research__grid">
-          <article class="research-card scroll-reveal" data-reveal="fade-right" style="--reveal-delay:0.05s" aria-label="Research paper 1">
-            <div class="research-card__meta">
-              <span class="research-card__badge"><i class="fa-solid fa-robot" aria-hidden="true"></i> AI &amp; Psychology</span>
-              <span class="research-card__num" aria-hidden="true">01</span>
-            </div>
-            <h3 class="research-card__title">How AI Companions Shape Emotional Decision-Making Among Students</h3>
-            <p class="research-card__desc">Investigating the psychological and emotional influence of AI companion systems on student decision-making processes, exploring both benefits and ethical considerations.</p>
-            <div class="research-card__tags" aria-label="Research topics">
-              <span>Artificial Intelligence</span><span>Emotional Intelligence</span><span>Student Behaviour</span>
-            </div>
-          </article>
-          <article class="research-card scroll-reveal" data-reveal="fade-left" style="--reveal-delay:0.1s" aria-label="Research paper 2">
-            <div class="research-card__meta">
-              <span class="research-card__badge"><i class="fa-solid fa-heart" aria-hidden="true"></i> Psychology</span>
-              <span class="research-card__num" aria-hidden="true">02</span>
-            </div>
-            <h3 class="research-card__title">Silent Struggles: The Impact of Adolescent Anxiety Disorders on Parent–Child Communication Patterns</h3>
-            <p class="research-card__desc">A qualitative study examining how undiagnosed and diagnosed adolescent anxiety disorders disrupt communication dynamics within family systems, with focus on South Asian contexts.</p>
-            <div class="research-card__tags" aria-label="Research topics">
-              <span>Adolescent Anxiety</span><span>Family Communication</span><span>Mental Health</span>
-            </div>
-          </article>
-        </div>
+        <header class="section-heading" data-reveal><span class="section-heading__index">02 — Selected work</span><div><h2 class="section-heading__title" id="work-title">Products with roles, rules, and real workflows.</h2><p class="section-heading__intro">A selected build log, newest first. Open a project for the problem, approach, and the links that are available today.</p></div></header>
+        <div class="projects-list" id="projectsList" aria-live="polite"></div>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="contact section" aria-labelledby="contact-heading">
+    <section class="section section--lined" id="experience" aria-labelledby="experience-title">
       <div class="container">
-        <div class="section-header scroll-reveal" data-reveal="fade-up">
-          <span class="section-label">Contact</span>
-          <h2 class="section-title" id="contact-heading">Let's Connect</h2>
-        </div>
-        <div class="contact__grid">
-          <div class="contact__info scroll-reveal" data-reveal="fade-right">
-            <p class="contact__intro">Have a project in mind, want to collaborate, or just want to say hello? My inbox is always open. I'll do my best to get back to you!</p>
-            <address class="contact__details" aria-label="Contact details">
-              <a href="mailto:rakibulislamakash40@gmail.com" class="contact-item" aria-label="Send email to Rakibul">
-                <div class="contact-item__icon" aria-hidden="true"><i class="fa-solid fa-envelope"></i></div>
-                <div>
-                  <span class="contact-item__label">Email</span>
-                  <span class="contact-item__value">rakibulislamakash40@gmail.com</span>
-                </div>
-              </a>
-              <a href="tel:+8801973096450" class="contact-item" aria-label="Call Rakibul">
-                <div class="contact-item__icon" aria-hidden="true"><i class="fa-solid fa-phone"></i></div>
-                <div>
-                  <span class="contact-item__label">Phone</span>
-                  <span class="contact-item__value">+880 1973 096 450</span>
-                </div>
-              </a>
-              <div class="contact-item">
-                <div class="contact-item__icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></div>
-                <div>
-                  <span class="contact-item__label">Location</span>
-                  <span class="contact-item__value">Bashundhara R/A, Dhaka, Bangladesh</span>
-                </div>
-              </div>
-            </address>
-            <div class="contact__social" aria-label="Social media links">
-              <a href="https://github.com/AxisAkash" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
-              <a href="https://linkedin.com/in/rakibul-islam-akash-2a0054347" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
-              <a href="mailto:rakibulislamakash40@gmail.com" class="social-btn" aria-label="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
-              <a href="https://aquamarine-concha-57fd70.netlify.app/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Portfolio"><i class="fa-solid fa-globe" aria-hidden="true"></i></a>
-            </div>
-          </div>
-          <div class="contact__form-wrap scroll-reveal" data-reveal="fade-left">
-            <form class="contact-form" id="contactForm" novalidate aria-label="Contact form">
-              <div class="form-group">
-                <label for="cf-name" class="form-label">Full Name</label>
-                <input type="text" id="cf-name" name="name" class="form-input" placeholder="Your name" required autocomplete="name" aria-required="true" />
-                <span class="form-error" id="nameError" role="alert" aria-live="polite"></span>
-              </div>
-              <div class="form-group">
-                <label for="cf-email" class="form-label">Email Address</label>
-                <input type="email" id="cf-email" name="email" class="form-input" placeholder="your@email.com" required autocomplete="email" aria-required="true" />
-                <span class="form-error" id="emailError" role="alert" aria-live="polite"></span>
-              </div>
-              <div class="form-group">
-                <label for="cf-subject" class="form-label">Subject</label>
-                <input type="text" id="cf-subject" name="subject" class="form-input" placeholder="What's this about?" autocomplete="off" />
-              </div>
-              <div class="form-group">
-                <label for="cf-message" class="form-label">Message</label>
-                <textarea id="cf-message" name="message" class="form-input form-textarea" placeholder="Tell me about your project or say hi..." rows="5" required aria-required="true"></textarea>
-                <span class="form-error" id="messageError" role="alert" aria-live="polite"></span>
-              </div>
-              <button type="submit" class="btn btn--primary btn--full btn--animated" id="submitBtn" aria-label="Send message">
-                <span class="btn-text"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send Message</span>
-                <span class="btn-loading" aria-hidden="true" hidden><i class="fa-solid fa-spinner fa-spin"></i> Sending…</span>
-              </button>
-              <div class="form-success" id="formSuccess" role="status" aria-live="polite" hidden>
-                <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Message sent! I'll get back to you soon.
-              </div>
-            </form>
-          </div>
+        <header class="section-heading" data-reveal><span class="section-heading__index">03 — Experience</span><div><h2 class="section-heading__title" id="experience-title">Professional work first. Education alongside it.</h2></div></header>
+        <div class="timeline" data-reveal>
+          <article class="timeline-entry"><time class="timeline-entry__date">Sep 2026 — Present</time><div><h3 class="timeline-entry__title">Software Engineer Intern</h3><p class="timeline-entry__place">IBCS-Primax Software (Bangladesh) Ltd. · Dhaka</p><p class="timeline-entry__copy">Working with senior engineers on backend web solutions: implementing features, debugging, participating in code reviews, writing unit tests, and maintaining technical documentation.</p><span class="timeline-entry__meta">Professional experience / current</span></div></article>
+          <article class="timeline-entry"><time class="timeline-entry__date">2023 — Present</time><div><h3 class="timeline-entry__title">B.Sc. Computer Science &amp; Engineering</h3><p class="timeline-entry__place">American International University-Bangladesh (AIUB)</p><p class="timeline-entry__copy">Coursework includes Data Structures &amp; Algorithms, OOP, Operating Systems, DBMS, Software Engineering, AI, Software Testing &amp; QA, Mobile App Development, and Computer Vision &amp; Pattern Recognition.</p><span class="timeline-entry__meta">GPA 3.38 / 4.00</span></div></article>
         </div>
       </div>
     </section>
 
+    <section class="section section--lined" id="research" aria-labelledby="research-title">
+      <div class="container">
+        <header class="section-heading" data-reveal><span class="section-heading__index">03.5 — Research</span><div><h2 class="section-heading__title" id="research-title">Questions I am still working through.</h2><p class="section-heading__intro">Secondary work and research interest. Neither item is presented as a publication.</p></div></header>
+        <div class="research-grid" data-reveal><article class="research-item"><span class="research-item__status">Research interest</span><h3>How AI Companions Shape Emotional Decision-Making Among Students</h3></article><article class="research-item"><span class="research-item__status">In progress</span><h3>Silent Struggles: Adolescent Anxiety Disorders and Parent–Child Communication (South Asian context)</h3></article></div>
+      </div>
+    </section>
+
+    <section class="section section--lined" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <header class="section-heading" data-reveal><span class="section-heading__index">04 — Contact</span><div><h2 class="section-heading__title" id="contact-title">A clear next step.</h2></div></header>
+        <div class="contact-grid">
+          <div data-reveal><p class="contact-lede">Have a good problem?</p><p class="contact-copy">Send context, not a pitch. I am open to conversations about software engineering opportunities and product work.</p><address class="contact-details"><a href="mailto:rakibulislamakash40@gmail.com"><svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg>rakibulislamakash40@gmail.com</a><a href="tel:+8801973096450">+880 1973-096450</a></address><button class="copy-email" id="copyEmail" type="button" data-email="rakibulislamakash40@gmail.com"><svg class="icon" aria-hidden="true"><use href="#icon-copy"></use></svg><span>Copy email</span></button></div>
+          <form class="contact-form" id="contactForm" data-endpoint="https://formspree.io/f/ENDPOINT_TODO" novalidate data-reveal>
+            <div class="form-field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required aria-describedby="nameError"><span class="form-error" id="nameError" role="alert"></span></div>
+            <div class="form-field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required aria-describedby="emailError"><span class="form-error" id="emailError" role="alert"></span></div>
+            <div class="form-field"><label for="message">Message</label><textarea id="message" name="message" rows="5" required aria-describedby="messageError"></textarea><span class="form-error" id="messageError" role="alert"></span></div>
+            <div class="form-honeypot" aria-hidden="true"><label for="company">Company</label><input id="company" name="company" tabindex="-1" autocomplete="off"></div>
+            <div class="form-actions"><button class="button button--primary" id="submitButton" type="submit">Send message <svg class="icon" aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></button><p class="form-status" id="formStatus" aria-live="polite"></p></div>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer__inner">
-        <div class="footer__brand">
-          <a href="#home" class="nav-logo footer__logo" aria-label="Back to top">
-            <span class="logo-bracket">&lt;</span>Akash<span class="logo-bracket">/&gt;</span>
-          </a>
-          <p class="footer__tagline">Building tomorrow's solutions, today.</p>
-        </div>
-        <nav class="footer__links" aria-label="Footer navigation">
-          <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a>
-          <a href="#projects">Projects</a><a href="#research">Research</a><a href="#contact">Contact</a>
-        </nav>
-        <div class="footer__social" aria-label="Social media">
-          <a href="https://github.com/AxisAkash" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
-          <a href="https://linkedin.com/in/rakibul-islam-akash-2a0054347" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
-          <a href="mailto:rakibulislamakash40@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
-        </div>
-      </div>
-      <div class="footer__bottom">
-        <p>&copy; <span id="year"></span> Rakibul Islam Akash. Crafted with <i class="fa-solid fa-heart footer__heart" aria-label="love" aria-hidden="true"></i> in Dhaka, Bangladesh.</p>
-        <p class="footer__credit">B.Sc. CSE Student &mdash; AIUB</p>
-      </div>
-    </div>
+  <footer class="footer">
+    <div class="container footer__row"><p class="footer__note">© <span id="year"></span> Rakibul Islam Akash · Dhaka, Bangladesh</p><p class="footer__meta">Colophon: Instrument Serif, Inter, JetBrains Mono · static HTML, CSS, and ES modules · hosted on GitHub Pages.</p></div>
   </footer>
 
-  <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Scroll back to top">
-    <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
-  </button>
+  <dialog class="case-study" id="caseStudy" aria-labelledby="caseStudyTitle"><div class="case-study__inner"><button class="case-study__close" id="caseStudyClose" type="button" aria-label="Close case study"><svg class="icon" aria-hidden="true"><use href="#icon-x"></use></svg></button><div id="caseStudyContent"></div></div></dialog>
 
-  <script src="script.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
