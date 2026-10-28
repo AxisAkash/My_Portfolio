@@ -1,0 +1,3 @@
+Résumé placeholder for Rakibul Islam Akash.
+
+Replace this file with the current PDF résumé before publishing. This placeholder is intentionally visible in the repository so the download link never pretends a résumé exists when it has not been supplied.
