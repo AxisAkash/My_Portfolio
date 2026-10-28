@@ -3,196 +3,142 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Rakibul Islam Akash is a software engineer building secure, role-based full-stack and mobile products. Currently at IBCS-Primax in Dhaka.">
-  <meta name="author" content="Rakibul Islam Akash">
-  <meta name="theme-color" content="#11110f" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#f5f4ef" media="(prefers-color-scheme: light)">
-  <link rel="canonical" href="https://axisakash.github.io/My_Portfolio/">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Rakibul Islam Akash">
-  <meta property="og:title" content="Rakibul Islam Akash | Software Engineer">
-  <meta property="og:description" content="Software engineer building secure, role-based full-stack and mobile products. Currently at IBCS-Primax.">
-  <meta property="og:url" content="https://axisakash.github.io/My_Portfolio/">
-  <meta property="og:image" content="https://axisakash.github.io/My_Portfolio/assets/og-image.svg">
-  <meta property="og:image:alt" content="Rakibul Islam Akash - software engineer portfolio">
-  <meta property="og:image:type" content="image/svg+xml">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Rakibul Islam Akash | Software Engineer">
-  <meta name="twitter:description" content="Secure, role-based full-stack and mobile products by Rakibul Islam Akash.">
-  <meta name="twitter:image" content="https://axisakash.github.io/My_Portfolio/assets/og-image.svg">
-  <title>Rakibul Islam Akash | Software Engineer</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.svg">
-  <link rel="manifest" href="site.webmanifest">
+  <meta name="description" content="FlowLedger income and expense tracker dashboard.">
+  <title>FlowLedger | Income &amp; Expense Tracker</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/tokens.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/sections.css">
-  <script>
-    (() => { const saved = localStorage.getItem('portfolio-theme'); const theme = saved || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme; })();
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Rakibul Islam Akash",
-    "jobTitle": "Software Engineer Intern",
-    "email": "mailto:rakibulislamakash40@gmail.com",
-    "address": { "@type": "PostalAddress", "addressLocality": "Dhaka", "addressCountry": "BD" },
-    "worksFor": { "@type": "Organization", "name": "IBCS-Primax Software (Bangladesh) Ltd." },
-    "alumniOf": { "@type": "CollegeOrUniversity", "name": "American International University-Bangladesh" },
-    "sameAs": ["https://github.com/AxisAkash", "https://linkedin.com/in/rakibul-islam-akash-2a0054347"]
-  }
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Skip to content</a>
-  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <svg class="visually-hidden" aria-hidden="true" focusable="false">
+  <svg class="svg-sprite" aria-hidden="true" focusable="false">
+    <symbol id="icon-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"></rect><rect x="14" y="4" width="6" height="6" rx="1"></rect><rect x="4" y="14" width="6" height="6" rx="1"></rect><rect x="14" y="14" width="6" height="6" rx="1"></rect></symbol>
+    <symbol id="icon-list" viewBox="0 0 24 24"><path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"></path></symbol>
+    <symbol id="icon-chart" viewBox="0 0 24 24"><path d="M4 19V5m0 14h16M7 15l3-4 3 2 5-7"></path></symbol>
+    <symbol id="icon-settings" viewBox="0 0 24 24"><path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"></path><path d="m19.4 15 .1.1a1.8 1.8 0 0 1-2.5 2.5l-.1-.1a1.8 1.8 0 0 0-3.1 1.3v.2a1.8 1.8 0 0 1-3.6 0v-.2a1.8 1.8 0 0 0-3.1-1.3l-.1.1a1.8 1.8 0 0 1-2.5-2.5l.1-.1a1.8 1.8 0 0 0-1.3-3.1h-.2a1.8 1.8 0 0 1 0-3.6h.2a1.8 1.8 0 0 0 1.3-3.1l-.1-.1a1.8 1.8 0 0 1 2.5-2.5l.1.1a1.8 1.8 0 0 0 3.1-1.3V2a1.8 1.8 0 0 1 3.6 0v.2a1.8 1.8 0 0 0 3.1 1.3l.1-.1a1.8 1.8 0 0 1 2.5 2.5l-.1.1a1.8 1.8 0 0 0 1.3 3.1h.2a1.8 1.8 0 0 1 0 3.6h-.2a1.8 1.8 0 0 0-1.3 2.3Z"></path></symbol>
+    <symbol id="icon-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></symbol>
+    <symbol id="icon-bell" viewBox="0 0 24 24"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"></path></symbol>
+    <symbol id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></symbol>
+    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M20.5 14.8A8.5 8.5 0 0 1 9.2 3.5 8.5 8.5 0 1 0 20.5 14.8Z"></path></symbol>
+    <symbol id="icon-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></symbol>
     <symbol id="icon-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"></path></symbol>
     <symbol id="icon-arrow-right" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"></path></symbol>
-    <symbol id="icon-arrow-left" viewBox="0 0 24 24"><path d="M20 12H5m6-6-6 6 6 6"></path></symbol>
-    <symbol id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path></symbol>
-    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M20.5 14.8A8.5 8.5 0 0 1 9.2 3.5 8.5 8.5 0 1 0 20.5 14.8Z"></path></symbol>
-    <symbol id="icon-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="11" height="11" rx="1"></rect><path d="M16 8V5H5v11h3"></path></symbol>
-    <symbol id="icon-x" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"></path></symbol>
-    <symbol id="icon-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"></rect><path d="m4 7 8 6 8-6"></path></symbol>
+    <symbol id="icon-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 20h16"></path></symbol>
+    <symbol id="icon-trash" viewBox="0 0 24 24"><path d="M5 7h14M10 11v5m4-5v5M9 7V4h6v3m-9 0 1 13h10l1-13"></path></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"></path></symbol>
+    <symbol id="icon-wallet" viewBox="0 0 24 24"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H19a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H6.5A2.5 2.5 0 0 1 4 17.5v-11Z"></path><path d="M4 7h14a2 2 0 0 1 2 2v2h-5a2 2 0 0 0 0 4h5v2M16 13h.01"></path></symbol>
+    <symbol id="icon-trend-up" viewBox="0 0 24 24"><path d="m4 16 6-6 4 4 6-7M15 7h5v5"></path></symbol>
+    <symbol id="icon-trend-down" viewBox="0 0 24 24"><path d="m4 8 6 6 4-4 6 7M15 17h5v-5"></path></symbol>
+    <symbol id="icon-filter" viewBox="0 0 24 24"><path d="M4 6h16M7 12h10m-7 6h4"></path></symbol>
+    <symbol id="icon-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"></rect><path d="M8 3v4m8-4v4M4 10h16"></path></symbol>
+    <symbol id="icon-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></symbol>
+    <symbol id="icon-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"></circle><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle></symbol>
+    <symbol id="icon-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 10v6m0-9h.01"></path></symbol>
   </svg>
 
-  <header class="site-header" id="siteHeader">
-    <div class="header-inner">
-      <a class="wordmark" href="#home" aria-label="Rakibul Islam Akash home"><span>[</span>RA<span>]</span></a>
-      <nav aria-label="Primary navigation">
-        <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Open navigation menu"><span class="nav-toggle__lines"></span></button>
-        <div class="nav-menu" id="navMenu">
-          <a class="nav-link" href="#about">About</a>
-          <a class="nav-link" href="#work">Work</a>
-          <a class="nav-link" href="#experience">Experience</a>
-          <a class="nav-link" href="#contact">Contact</a>
-        </div>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
+      <div class="sidebar__top">
+        <a class="brand" href="#dashboard" data-view-target="dashboard" aria-label="FlowLedger dashboard">
+          <span class="brand__mark">F</span>
+          <span class="brand__word">Flow<span>Ledger</span></span>
+        </a>
+        <button class="icon-button sidebar__close" id="sidebarClose" type="button" aria-label="Close navigation"><svg class="icon"><use href="#icon-close"></use></svg></button>
+      </div>
+      <div class="sidebar__section-label">Workspace</div>
+      <nav class="sidebar__nav" aria-label="Workspace views">
+        <button class="nav-item is-active" type="button" data-view-target="dashboard" aria-current="page"><svg class="icon"><use href="#icon-grid"></use></svg><span>Dashboard</span></button>
+        <button class="nav-item" type="button" data-view-target="transactions"><svg class="icon"><use href="#icon-list"></use></svg><span>Transactions</span><span class="nav-item__count" id="navTransactionCount">15</span></button>
+        <button class="nav-item" type="button" data-view-target="analytics"><svg class="icon"><use href="#icon-chart"></use></svg><span>Analytics</span></button>
       </nav>
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme"><svg class="icon" aria-hidden="true"><use href="#icon-sun"></use></svg></button>
-    </div>
-  </header>
+      <div class="sidebar__section-label">Manage</div>
+      <nav class="sidebar__nav" aria-label="Management views">
+        <button class="nav-item" type="button" data-view-target="settings"><svg class="icon"><use href="#icon-settings"></use></svg><span>Settings</span></button>
+      </nav>
+      <div class="sidebar__footer">
+        <div class="sidebar__support"><span class="status-dot"></span><span>All data synced locally</span></div>
+        <button class="profile-mini" type="button" data-profile-toggle aria-expanded="false" aria-controls="profileMenu">
+          <span class="avatar" id="sidebarAvatar">AK</span><span class="profile-mini__copy"><strong id="sidebarName">Alex Kim</strong><small id="sidebarEmail">alex@flowledger.app</small></span><svg class="icon"><use href="#icon-more"></use></svg>
+        </button>
+      </div>
+    </aside>
+    <div class="sidebar-overlay" id="sidebarOverlay" hidden></div>
 
-  <aside class="section-index" aria-label="Section index">
-    <a href="#home" data-index-link="home">00 <span class="visually-hidden">Home</span></a>
-    <a href="#about" data-index-link="about">01 <span class="visually-hidden">About</span></a>
-    <a href="#work" data-index-link="work">02 <span class="visually-hidden">Selected work</span></a>
-    <a href="#experience" data-index-link="experience">03 <span class="visually-hidden">Experience</span></a>
-    <a href="#contact" data-index-link="contact">04 <span class="visually-hidden">Contact</span></a>
-  </aside>
-
-  <main class="site-main" id="main-content">
-    <section class="hero container" id="home" aria-labelledby="hero-title">
-      <div class="hero__layout">
-        <div>
-          <p class="hero__kicker">Software engineer / Dhaka</p>
-          <h1 class="hero__title" id="hero-title">
-            <span class="hero__reveal"><span>Rakibul</span></span>
-            <span class="hero__reveal"><span><em>Islam</em></span></span>
-            <span class="hero__reveal"><span>Akash.</span></span>
-          </h1>
-          <p class="hero__copy">Building secure, role-based full-stack and mobile products. Currently at IBCS-Primax.</p>
-          <div class="hero__actions">
-            <a class="button button--primary" href="#work" data-magnetic>View selected work <svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></a>
-            <a class="button" href="assets/resume-placeholder.txt" download>Download résumé</a>
-          </div>
-          <div class="hero__socials" aria-label="Social links">
-            <a href="https://github.com/AxisAkash" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
-            <a href="https://linkedin.com/in/rakibul-islam-akash-2a0054347" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
-            <a href="mailto:rakibulislamakash40@gmail.com">Email <span aria-hidden="true">↗</span></a>
-          </div>
+    <div class="main-wrapper">
+      <header class="topbar">
+        <div class="topbar__left">
+          <button class="icon-button mobile-menu" id="mobileMenu" type="button" aria-label="Open navigation"><svg class="icon"><use href="#icon-menu"></use></svg></button>
+          <div class="breadcrumbs"><span id="breadcrumbRoot">Workspace</span><svg class="icon"><use href="#icon-chevron-down"></use></svg><strong id="breadcrumbCurrent">Dashboard</strong></div>
         </div>
-        <div class="hero__meta" aria-label="Current status">
-          <div class="hero__meta-block"><span class="hero__meta-label">Now</span><span class="hero__meta-value hero__meta-value--live">Intern @ IBCS-Primax</span></div>
-          <div class="hero__meta-block"><span class="hero__meta-label">Dhaka local time</span><time class="hero__meta-value" id="dhakaTime" datetime=""></time></div>
-          <div class="hero__meta-block"><span class="hero__meta-label">Based in</span><span class="hero__meta-value">Bashundhara R/A, Dhaka</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--lined" id="about" aria-labelledby="about-title">
-      <div class="container">
-        <header class="section-heading" data-reveal>
-          <span class="section-heading__index">01 — About</span>
-          <div><h2 class="section-heading__title" id="about-title">An engineer with a bias for useful systems.</h2><p class="section-heading__intro">I work across backend, mobile, and data layers, with a focus on the access rules and workflows that make a product dependable.</p></div>
-        </header>
-        <div class="about-grid" data-reveal>
-          <article class="about-panel about-panel--statement"><span class="about-panel__label">01 / Point of view</span><p class="about-panel__lead">I like the part where a vague requirement becomes a system people can actually use.</p></article>
-          <article class="about-panel about-panel--fact"><span class="about-panel__label">02 / Coordinates</span><dl class="fact-list"><div class="fact-list__item"><dt class="fact-list__label">Location</dt><dd class="fact-list__value">Bashundhara R/A, Dhaka, Bangladesh</dd></div><div class="fact-list__item"><dt class="fact-list__label">Email</dt><dd class="fact-list__value"><a href="mailto:rakibulislamakash40@gmail.com">rakibulislamakash40@gmail.com</a></dd></div><div class="fact-list__item"><dt class="fact-list__label">Phone</dt><dd class="fact-list__value"><a href="tel:+8801973096450">+880 1973-096450</a></dd></div></dl></article>
-          <article class="about-panel about-panel--education"><span class="about-panel__label">03 / Education</span><div class="education-list"><div class="education-list__item"><time class="education-list__date">2023 — Present</time><strong class="education-list__degree">B.Sc. CSE</strong><span class="education-list__school">American International University-Bangladesh (AIUB) · GPA 3.38/4.00</span></div><div class="education-list__item"><time class="education-list__date">2019 — 2022</time><strong class="education-list__degree">HSC, Science</strong><span class="education-list__school">Govt. Yeasin College · GPA 5.00/5.00</span></div><div class="education-list__item"><time class="education-list__date">2017 — 2019</time><strong class="education-list__degree">SSC, Science</strong><span class="education-list__school">Faridpur Zilla School · GPA 4.89/5.00</span></div></div></article>
-          <article class="about-panel about-panel--languages"><span class="about-panel__label">04 / Languages</span><ul class="languages-list"><li>Bengali <span>native</span></li><li>English <span>fluent</span></li></ul></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--lined" id="capabilities" aria-labelledby="capabilities-title">
-      <div class="container">
-        <header class="section-heading" data-reveal><span class="section-heading__index">01.5 — Capabilities</span><div><h2 class="section-heading__title" id="capabilities-title">A capability map, not a logo wall.</h2><p class="section-heading__intro">The tools are useful because they let me build a specific kind of product: one with clear roles, persistent data, and a reliable path through the interface.</p></div></header>
-        <div class="skills-map" data-reveal>
-          <article class="skill-group"><h3>Backend &amp; data</h3><p>Express.js<br>PHP (MVC)<br>MySQL · SQL Server<br>Supabase / PostgreSQL<br>Authentication · RBAC<br>Session management<br>Prepared statements</p></article>
-          <article class="skill-group"><h3>Mobile</h3><p>React<br>React Native<br>Expo<br>TypeScript<br>Role-based mobile workflows</p></article>
-          <article class="skill-group"><h3>AI</h3><p>TensorFlow<br>NLP basics<br>Prompt engineering<br>AI-assisted development,<br>debugging, and refactoring</p></article>
-          <article class="skill-group"><h3>Languages</h3><p>C++ · Java · C#<br>SQL · PHP · JavaScript<br>Python · TypeScript</p></article>
-          <article class="skill-group"><h3>Tooling</h3><p>Git<br>GitHub<br>GitLab</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--lined" id="work" aria-labelledby="work-title">
-      <div class="container">
-        <header class="section-heading" data-reveal><span class="section-heading__index">02 — Selected work</span><div><h2 class="section-heading__title" id="work-title">Products with roles, rules, and real workflows.</h2><p class="section-heading__intro">A selected build log, newest first. Open a project for the problem, approach, and the links that are available today.</p></div></header>
-        <div class="projects-list" id="projectsList" aria-live="polite"></div>
-      </div>
-    </section>
-
-    <section class="section section--lined" id="experience" aria-labelledby="experience-title">
-      <div class="container">
-        <header class="section-heading" data-reveal><span class="section-heading__index">03 — Experience</span><div><h2 class="section-heading__title" id="experience-title">Professional work first. Education alongside it.</h2></div></header>
-        <div class="timeline" data-reveal>
-          <article class="timeline-entry"><time class="timeline-entry__date">Sep 2026 — Present</time><div><h3 class="timeline-entry__title">Software Engineer Intern</h3><p class="timeline-entry__place">IBCS-Primax Software (Bangladesh) Ltd. · Dhaka</p><p class="timeline-entry__copy">Working with senior engineers on backend web solutions: implementing features, debugging, participating in code reviews, writing unit tests, and maintaining technical documentation.</p><span class="timeline-entry__meta">Professional experience / current</span></div></article>
-          <article class="timeline-entry"><time class="timeline-entry__date">2023 — Present</time><div><h3 class="timeline-entry__title">B.Sc. Computer Science &amp; Engineering</h3><p class="timeline-entry__place">American International University-Bangladesh (AIUB)</p><p class="timeline-entry__copy">Coursework includes Data Structures &amp; Algorithms, OOP, Operating Systems, DBMS, Software Engineering, AI, Software Testing &amp; QA, Mobile App Development, and Computer Vision &amp; Pattern Recognition.</p><span class="timeline-entry__meta">GPA 3.38 / 4.00</span></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--lined" id="research" aria-labelledby="research-title">
-      <div class="container">
-        <header class="section-heading" data-reveal><span class="section-heading__index">03.5 — Research</span><div><h2 class="section-heading__title" id="research-title">Questions I am still working through.</h2><p class="section-heading__intro">Secondary work and research interest. Neither item is presented as a publication.</p></div></header>
-        <div class="research-grid" data-reveal><article class="research-item"><span class="research-item__status">Research interest</span><h3>How AI Companions Shape Emotional Decision-Making Among Students</h3></article><article class="research-item"><span class="research-item__status">In progress</span><h3>Silent Struggles: Adolescent Anxiety Disorders and Parent–Child Communication (South Asian context)</h3></article></div>
-      </div>
-    </section>
-
-    <section class="section section--lined" id="contact" aria-labelledby="contact-title">
-      <div class="container">
-        <header class="section-heading" data-reveal><span class="section-heading__index">04 — Contact</span><div><h2 class="section-heading__title" id="contact-title">A clear next step.</h2></div></header>
-        <div class="contact-grid">
-          <div data-reveal><p class="contact-lede">Have a good problem?</p><p class="contact-copy">Send context, not a pitch. I am open to conversations about software engineering opportunities and product work.</p><address class="contact-details"><a href="mailto:rakibulislamakash40@gmail.com"><svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg>rakibulislamakash40@gmail.com</a><a href="tel:+8801973096450">+880 1973-096450</a></address><button class="copy-email" id="copyEmail" type="button" data-email="rakibulislamakash40@gmail.com"><svg class="icon" aria-hidden="true"><use href="#icon-copy"></use></svg><span>Copy email</span></button></div>
-          <form class="contact-form" id="contactForm" data-endpoint="https://formspree.io/f/ENDPOINT_TODO" novalidate data-reveal>
-            <div class="form-field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required aria-describedby="nameError"><span class="form-error" id="nameError" role="alert"></span></div>
-            <div class="form-field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required aria-describedby="emailError"><span class="form-error" id="emailError" role="alert"></span></div>
-            <div class="form-field"><label for="message">Message</label><textarea id="message" name="message" rows="5" required aria-describedby="messageError"></textarea><span class="form-error" id="messageError" role="alert"></span></div>
-            <div class="form-honeypot" aria-hidden="true"><label for="company">Company</label><input id="company" name="company" tabindex="-1" autocomplete="off"></div>
-            <div class="form-actions"><button class="button button--primary" id="submitButton" type="submit">Send message <svg class="icon" aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></button><p class="form-status" id="formStatus" aria-live="polite"></p></div>
+        <div class="topbar__actions">
+          <form class="global-search" id="globalSearch" role="search">
+            <svg class="icon"><use href="#icon-search"></use></svg><label class="sr-only" for="globalSearchInput">Search transactions</label><input id="globalSearchInput" type="search" placeholder="Search transactions" autocomplete="off"><kbd>⌘ K</kbd>
           </form>
+          <button class="icon-button" id="headerThemeToggle" type="button" aria-label="Switch to light theme"><svg class="icon"><use href="#icon-sun"></use></svg></button>
+          <button class="icon-button notification-button" type="button" aria-label="Notifications"><svg class="icon"><use href="#icon-bell"></use></svg><span class="notification-button__dot"></span></button>
+          <div class="profile-wrap">
+            <button class="profile-trigger" id="profileTrigger" type="button" data-profile-toggle aria-expanded="false" aria-controls="profileMenu"><span class="avatar" id="headerAvatar">AK</span><span class="profile-trigger__name" id="headerName">Alex Kim</span><svg class="icon"><use href="#icon-chevron-down"></use></svg></button>
+            <div class="profile-menu" id="profileMenu" role="menu" hidden>
+              <div class="profile-menu__header"><span class="avatar avatar--large" id="menuAvatar">AK</span><div><strong id="menuName">Alex Kim</strong><small id="menuEmail">alex@flowledger.app</small></div></div>
+              <button type="button" role="menuitem" data-view-target="settings"><svg class="icon"><use href="#icon-settings"></use></svg>Settings</button>
+              <button type="button" role="menuitem" data-action="export"><svg class="icon"><use href="#icon-download"></use></svg>Export CSV</button>
+              <button type="button" role="menuitem" data-action="clear" class="menu-item--danger"><svg class="icon"><use href="#icon-trash"></use></svg>Clear data</button>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </header>
 
-  <footer class="footer">
-    <div class="container footer__row"><p class="footer__note">© <span id="year"></span> Rakibul Islam Akash · Dhaka, Bangladesh</p><p class="footer__meta">Colophon: Instrument Serif, Inter, JetBrains Mono · static HTML, CSS, and ES modules · hosted on GitHub Pages.</p></div>
-  </footer>
+      <main class="main-content" id="main-content">
+        <section class="view is-active" id="view-dashboard" data-view="dashboard" aria-labelledby="dashboard-title">
+          <div class="page-header">
+            <div><p class="eyebrow">Tuesday, October 28, 2026</p><h1 id="dashboard-title">Good morning, <span id="greetingName">Alex</span>.</h1><p class="page-header__sub">Here is your financial overview for the current period.</p></div>
+            <button class="button button--primary" type="button" data-open-add><svg class="icon"><use href="#icon-plus"></use></svg>Add transaction</button>
+          </div>
+          <div class="period-switcher" role="group" aria-label="Dashboard period"><button type="button" class="is-active" data-period="month" aria-pressed="true">This month</button><button type="button" data-period="quarter" aria-pressed="false">This quarter</button><button type="button" data-period="year" aria-pressed="false">This year</button></div>
+          <div class="kpi-grid" id="kpiGrid" aria-live="polite">
+            <article class="kpi-card kpi-card--balance"><div class="kpi-card__top"><span class="kpi-card__label">Net balance</span><span class="kpi-card__icon"><svg class="icon"><use href="#icon-wallet"></use></svg></span></div><strong class="money money--large" id="kpiBalance">$0.00</strong><div class="kpi-card__meta"><span class="trend-badge trend-badge--positive" id="balanceTrend">+0.0%</span><span>vs previous period</span></div></article>
+            <article class="kpi-card kpi-card--income"><div class="kpi-card__top"><span class="kpi-card__label">Total income</span><span class="kpi-card__icon"><svg class="icon"><use href="#icon-trend-up"></use></svg></span></div><strong class="money money--large" id="kpiIncome">$0.00</strong><div class="kpi-card__meta"><span class="kpi-card__accent">Incoming</span><span id="incomeCount">0 deposits</span></div></article>
+            <article class="kpi-card kpi-card--expense"><div class="kpi-card__top"><span class="kpi-card__label">Total expenses</span><span class="kpi-card__icon"><svg class="icon"><use href="#icon-trend-down"></use></svg></span></div><strong class="money money--large" id="kpiExpense">$0.00</strong><div class="kpi-card__meta"><span class="kpi-card__accent">Outgoing</span><span id="expenseCount">0 payments</span></div></article>
+            <article class="kpi-card kpi-card--savings"><div class="kpi-card__top"><span class="kpi-card__label">Savings rate</span><span class="kpi-card__icon"><svg class="icon"><use href="#icon-chart"></use></svg></span></div><strong class="money money--large" id="kpiSavings">0.0%</strong><div class="progress-track progress-track--small"><span class="progress-fill progress-fill--blue" id="savingsProgress"></span></div><div class="kpi-card__meta"><span id="savingsMeta">Based on current period</span></div></article>
+          </div>
 
-  <dialog class="case-study" id="caseStudy" aria-labelledby="caseStudyTitle"><div class="case-study__inner"><button class="case-study__close" id="caseStudyClose" type="button" aria-label="Close case study"><svg class="icon" aria-hidden="true"><use href="#icon-x"></use></svg></button><div id="caseStudyContent"></div></div></dialog>
+          <div class="dashboard-grid">
+            <article class="panel chart-panel chart-panel--cashflow"><div class="panel__header"><div><p class="panel__eyebrow">Cash flow</p><h2>Income vs expenses</h2></div><button class="select-button" type="button" data-period-menu aria-label="Change chart period">Last 6 months <svg class="icon"><use href="#icon-chevron-down"></use></svg></button></div><div class="chart-legend"><span><i class="legend-dot legend-dot--income"></i>Income</span><span><i class="legend-dot legend-dot--expense"></i>Expenses</span></div><div class="chart-wrap chart-wrap--cashflow"><canvas id="cashflowChart" role="img" aria-label="Income and expenses cash flow chart"></canvas><div class="chart-empty" id="cashflowEmpty">Add more transactions to see your cash flow.</div></div></article>
+            <article class="panel add-panel" id="addPanel"><div class="panel__header"><div><p class="panel__eyebrow">Quick entry</p><h2>Add transaction</h2></div><span class="quick-entry-mark"><svg class="icon"><use href="#icon-plus"></use></svg></span></div><form class="transaction-form" id="transactionForm" novalidate><div class="segmented-control" role="group" aria-label="Transaction type"><button type="button" class="is-active" data-transaction-type="income" aria-pressed="true">Income</button><button type="button" data-transaction-type="expense" aria-pressed="false">Expense</button></div><div class="form-field"><label for="transactionTitle">Title <span>*</span></label><input id="transactionTitle" name="title" type="text" placeholder="e.g. Monthly salary" required aria-required="true" aria-describedby="titleError"><span class="form-error" id="titleError" role="alert"></span></div><div class="form-row"><div class="form-field"><label for="transactionAmount">Amount <span>*</span></label><div class="input-prefix"><span id="amountCurrency">$</span><input id="transactionAmount" name="amount" type="number" min="0.01" step="0.01" placeholder="0.00" required aria-required="true" aria-describedby="amountError"></div><span class="form-error" id="amountError" role="alert"></span></div><div class="form-field"><label for="transactionDate">Date <span>*</span></label><div class="input-icon"><input id="transactionDate" name="date" type="date" required aria-required="true" aria-describedby="dateError"><svg class="icon"><use href="#icon-calendar"></use></svg></div><span class="form-error" id="dateError" role="alert"></span></div></div><div class="form-field"><label for="transactionCategory">Category <span>*</span></label><select id="transactionCategory" name="category" required aria-required="true" aria-describedby="categoryError"></select><span class="form-error" id="categoryError" role="alert"></span></div><div class="form-field"><label for="transactionNote">Note <small>Optional</small></label><input id="transactionNote" name="note" type="text" placeholder="Add context"></div><button class="button button--primary button--full" type="submit"><svg class="icon"><use href="#icon-plus"></use></svg>Add transaction</button><p class="form-status" id="formStatus" aria-live="polite"></p></form></article>
+          </div>
 
-  <script type="module" src="js/main.js"></script>
+          <article class="panel recent-panel"><div class="panel__header"><div><p class="panel__eyebrow">Activity</p><h2>Recent transactions</h2></div><button class="text-button" type="button" data-view-target="transactions">View all <svg class="icon"><use href="#icon-arrow-right"></use></svg></button></div><div class="transaction-list transaction-list--recent" id="recentTransactions" aria-live="polite"></div><div class="empty-state empty-state--compact" id="recentEmpty" hidden><span class="empty-state__icon"><svg class="icon"><use href="#icon-wallet"></use></svg></span><strong>No transactions yet</strong><p>Use the form above to add your first entry.</p></div></article>
+        </section>
+
+        <section class="view" id="view-transactions" data-view="transactions" aria-labelledby="transactions-title" hidden>
+          <div class="page-header"><div><p class="eyebrow">Workspace / Records</p><h1 id="transactions-title">Transactions</h1><p class="page-header__sub">Review, search, and manage every movement of money.</p></div><button class="button button--primary" type="button" data-open-add><svg class="icon"><use href="#icon-plus"></use></svg>Add transaction</button></div>
+          <div class="panel transactions-panel"><div class="transactions-toolbar"><div class="filter-tabs" role="group" aria-label="Transaction type filter"><button class="is-active" type="button" data-filter="all" aria-pressed="true">All <span id="allFilterCount">0</span></button><button type="button" data-filter="income" aria-pressed="false">Income <span id="incomeFilterCount">0</span></button><button type="button" data-filter="expense" aria-pressed="false">Expenses <span id="expenseFilterCount">0</span></button></div><div class="transactions-tools"><label class="search-field"><svg class="icon"><use href="#icon-search"></use></svg><span class="sr-only">Search transactions</span><input id="transactionSearch" type="search" placeholder="Search records..." autocomplete="off"></label><label class="select-field"><span class="sr-only">Sort transactions</span><select id="transactionSort"><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="amount-desc">Amount high to low</option><option value="amount-asc">Amount low to high</option></select><svg class="icon"><use href="#icon-chevron-down"></use></svg></label></div></div><div class="transaction-list transaction-list--full" id="transactionsList" aria-live="polite"></div><div class="empty-state" id="transactionsEmpty" hidden><span class="empty-state__icon"><svg class="icon"><use href="#icon-filter"></use></svg></span><strong>No matching transactions</strong><p>Try another filter or search term.</p><button class="text-button" type="button" data-clear-filter>Clear filters</button></div><div class="list-footer"><span id="transactionCountText">0 of 0 transactions</span><span>Stored locally in this browser</span></div></div>
+        </section>
+
+        <section class="view" id="view-analytics" data-view="analytics" aria-labelledby="analytics-title" hidden>
+          <div class="page-header"><div><p class="eyebrow">Workspace / Intelligence</p><h1 id="analytics-title">Analytics</h1><p class="page-header__sub">Understand the patterns behind your cash flow.</p></div><div class="page-header__meta"><span class="live-indicator"><i></i>Live calculations</span><span id="analyticsDateRange">Last 3 months</span></div></div>
+          <div class="analytics-row analytics-row--top"><article class="panel chart-panel chart-panel--wave"><div class="panel__header"><div><p class="panel__eyebrow">Trendline</p><h2>Cash flow wave</h2></div><span class="panel__period">Monthly</span></div><div class="chart-legend"><span><i class="legend-dot legend-dot--income"></i>Income</span><span><i class="legend-dot legend-dot--expense"></i>Expenses</span></div><div class="chart-wrap chart-wrap--wave"><canvas id="analyticsWave" role="img" aria-label="Cash flow wave chart"></canvas><div class="chart-empty" id="waveEmpty">Add transactions across multiple months to unlock this view.</div></div></article><article class="panel category-panel"><div class="panel__header"><div><p class="panel__eyebrow">Spend map</p><h2>Expense categories</h2></div><svg class="panel-header-icon icon"><use href="#icon-filter"></use></svg></div><div class="category-progress-list" id="categoryProgress"></div></article></div>
+          <div class="radial-grid" id="radialGrid"><article class="panel radial-card radial-card--blue"><div class="radial-chart-wrap"><canvas id="radialSavings" role="img" aria-label="Savings rate radial chart"></canvas><div class="radial-center"><strong id="radialSavingsValue">0%</strong><span>Savings rate</span></div></div><div class="radial-card__footer"><span>Target</span><strong>30%</strong></div></article><article class="panel radial-card radial-card--green"><div class="radial-chart-wrap"><canvas id="radialIncome" role="img" aria-label="Income coverage radial chart"></canvas><div class="radial-center"><strong id="radialIncomeValue">0%</strong><span>Income used</span></div></div><div class="radial-card__footer"><span>Available</span><strong id="radialAvailable">$0</strong></div></article><article class="panel radial-card radial-card--amber"><div class="radial-chart-wrap"><canvas id="radialBudget" role="img" aria-label="Budget health radial chart"></canvas><div class="radial-center"><strong id="radialBudgetValue">0%</strong><span>Budget health</span></div></div><div class="radial-card__footer"><span>Monthly limit</span><strong id="radialBudgetLimit">$5,000</strong></div></article><article class="panel radial-card radial-card--violet"><div class="radial-chart-wrap"><canvas id="radialActivity" role="img" aria-label="Activity completion radial chart"></canvas><div class="radial-center"><strong id="radialActivityValue">0%</strong><span>Data coverage</span></div></div><div class="radial-card__footer"><span>Transactions</span><strong id="radialActivityCount">0</strong></div></article></div>
+          <div class="analytics-row analytics-row--bottom"><article class="panel chart-panel chart-panel--line"><div class="panel__header"><div><p class="panel__eyebrow">Comparison</p><h2>Income vs expense</h2></div><span class="panel__period">6 months</span></div><div class="chart-wrap chart-wrap--line"><canvas id="analyticsLine" role="img" aria-label="Income and expense comparison line chart"></canvas></div></article><article class="panel chart-panel chart-panel--bar"><div class="panel__header"><div><p class="panel__eyebrow">Quarterly view</p><h2>Momentum</h2></div><span class="panel__period">Quarterly</span></div><div class="chart-wrap chart-wrap--bar"><canvas id="analyticsBar" role="img" aria-label="Quarterly income and expense bar chart"></canvas></div></article><article class="panel category-summary"><div class="panel__header"><div><p class="panel__eyebrow">Mix</p><h2>Balance split</h2></div></div><div class="chart-wrap chart-wrap--donut"><canvas id="incomeExpenseDonut" role="img" aria-label="Income and expense split doughnut chart"></canvas><div class="donut-center"><span>Net balance</span><strong id="donutBalance">$0</strong></div></div><div class="split-legend"><span><i class="legend-dot legend-dot--income"></i>Income <strong id="donutIncome">$0</strong></span><span><i class="legend-dot legend-dot--expense"></i>Expenses <strong id="donutExpense">$0</strong></span></div><div class="top-categories" id="topCategories"></div></article></div>
+          <div class="metrics-grid"><article class="metric-card"><span>Average income</span><strong class="money" id="metricAvgIncome">$0</strong><small>per active month</small></article><article class="metric-card"><span>Average expense</span><strong class="money" id="metricAvgExpense">$0</strong><small>per active month</small></article><article class="metric-card"><span>Largest expense</span><strong class="money" id="metricLargestExpense">$0</strong><small id="metricLargestExpenseName">No expenses yet</small></article><article class="metric-card"><span>Best savings month</span><strong class="money" id="metricBestMonth">—</strong><small id="metricBestMonthValue">No data yet</small></article></div>
+        </section>
+
+        <section class="view" id="view-settings" data-view="settings" aria-labelledby="settings-title" hidden>
+          <div class="page-header"><div><p class="eyebrow">Manage / Preferences</p><h1 id="settings-title">Settings</h1><p class="page-header__sub">Tune FlowLedger to fit your working rhythm.</p></div></div>
+          <div class="settings-layout"><div class="settings-main"><article class="panel settings-section"><div class="settings-section__header"><div><p class="panel__eyebrow">Personal details</p><h2>Profile</h2></div><span class="settings-number">01</span></div><form id="profileForm" class="profile-form"><div class="profile-form__avatar"><span class="avatar avatar--xl" id="settingsAvatar">AK</span><div><strong id="settingsProfileName">Alex Kim</strong><p>Personal workspace</p></div></div><div class="form-row"><div class="form-field"><label for="profileName">Full name</label><input id="profileName" name="name" type="text" value="Alex Kim" required aria-required="true"></div><div class="form-field"><label for="profileEmail">Email address</label><input id="profileEmail" name="email" type="email" value="alex@flowledger.app" required aria-required="true"></div></div><div class="form-field"><label for="profileCurrency">Default currency</label><select id="profileCurrency" name="currency"><option value="USD">USD — United States Dollar</option><option value="EUR">EUR — Euro</option><option value="GBP">GBP — Pound Sterling</option><option value="BDT">BDT — Bangladeshi Taka</option></select></div><div class="settings-form-actions"><button class="button button--primary" type="submit">Save changes</button><span class="form-status" id="profileStatus" aria-live="polite"></span></div></form></article><article class="panel settings-section"><div class="settings-section__header"><div><p class="panel__eyebrow">Data portability</p><h2>Export &amp; backup</h2></div><span class="settings-number">02</span></div><div class="settings-action-row"><div><strong>Download your records</strong><p>Export every transaction as a CSV file for your own archive.</p></div><button class="button" type="button" data-action="export"><svg class="icon"><use href="#icon-download"></use></svg>Export CSV</button></div></article><article class="panel settings-section settings-section--danger"><div class="settings-section__header"><div><p class="panel__eyebrow">Irreversible action</p><h2>Danger zone</h2></div><span class="settings-number">03</span></div><div class="settings-action-row"><div><strong>Clear all transaction data</strong><p>Remove every transaction from this browser. Your profile settings will remain.</p></div><button class="button button--danger" type="button" data-action="clear"><svg class="icon"><use href="#icon-trash"></use></svg>Clear data</button></div></article></div><aside class="settings-side"><article class="panel preferences-panel"><div class="settings-section__header"><div><p class="panel__eyebrow">Workspace</p><h2>Preferences</h2></div></div><div class="preference-row"><div><strong>Appearance</strong><p>Use dark or light surfaces.</p></div><button class="switch" id="settingsThemeToggle" type="button" role="switch" aria-checked="true" aria-label="Toggle dark theme"><span></span></button></div><div class="preference-row"><div><strong>Compact density</strong><p>Reduce row spacing for dense data.</p></div><button class="switch" id="densityToggle" type="button" role="switch" aria-checked="false" aria-label="Toggle compact density"><span></span></button></div></article><article class="panel settings-note"><svg class="icon"><use href="#icon-info"></use></svg><div><strong>Privacy by default</strong><p>FlowLedger stores transactions only in this browser. No account or server connection is required.</p></div></article></aside></div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden></div>
+  <div class="confirm-modal" id="confirmModal" role="dialog" aria-modal="true" aria-labelledby="confirmTitle" aria-describedby="confirmMessage" hidden><div class="confirm-modal__icon"><svg class="icon"><use href="#icon-trash"></use></svg></div><h2 id="confirmTitle">Clear all data?</h2><p id="confirmMessage">This action cannot be undone. Your transactions will be permanently removed from this browser.</p><div class="confirm-modal__actions"><button class="button" type="button" data-modal-cancel>Cancel</button><button class="button button--danger" type="button" data-modal-confirm>Clear data</button></div></div>
+  <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
 </body>
 </html>
